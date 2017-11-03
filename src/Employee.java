@@ -4,20 +4,19 @@ public class Employee {
 	private int key;
 	private String firstName;
 	private String lastName;
-	private double weeklyPay;
+	private double hourlyPay;
 	private double balance;
-	private Employee next;
 
 	public Employee(){
 		
 	}
 	
-	public Employee(int key, String firstName, String lastName, double weeklyPay, double balance){
+	public Employee(int key, String firstName, String lastName, double hourlyPay, double balance){
 		
 		this.key = key;
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.weeklyPay = weeklyPay;
+		this.hourlyPay = hourlyPay;
 		this.balance = balance;
 		
 	}
@@ -46,12 +45,12 @@ public class Employee {
 		this.lastName = lastName;
 	}
 
-	public double getWeeklyPay() {
-		return weeklyPay;
+	public double getHourlyPay() {
+		return hourlyPay;
 	}
 
-	public void setWeeklyPay(double weeklyPay) {
-		this.weeklyPay = weeklyPay;
+	public void setHourlyPay(double hourlyPay) {
+		this.hourlyPay = hourlyPay;
 	}
 
 	public double getBalance() {
@@ -60,14 +59,6 @@ public class Employee {
 
 	public void setBalance(double balance) {
 		this.balance = balance;
-	}
-	
-	public Employee getNext() {
-		return next;
-	}
-
-	public void setNext(Employee next) {
-		this.next = next;
 	}
 	
 	
@@ -86,7 +77,7 @@ public class Employee {
 	public void displayInfo(){
 		
 		System.out.println("Employee Key: " + getKey() + " || First Name: " + getFirstName() + " || Last Name: " + getLastName()
-		+ "\nWeekly Pay: " + getWeeklyPay() + " || Current Balance: " + getBalance());
+		+ "\nWeekly Pay: " + getHourlyPay() + " || Current Balance: " + getBalance());
 		
 	}
 
