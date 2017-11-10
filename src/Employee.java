@@ -4,6 +4,7 @@ public class Employee {
 	private int key;
 	private String firstName;
 	private String lastName;
+	private String occupation;
 	private double hourlyPay;
 	private double balance;
 
@@ -11,11 +12,12 @@ public class Employee {
 		
 	}
 	
-	public Employee(int key, String firstName, String lastName, double hourlyPay, double balance){
+	public Employee(int key, String firstName, String lastName, String occupation, double hourlyPay, double balance){
 		
 		this.key = key;
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.occupation = occupation;
 		this.hourlyPay = hourlyPay;
 		this.balance = balance;
 		
@@ -43,6 +45,14 @@ public class Employee {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+	
+	public String getOccupation() {
+		return occupation;
+	}
+
+	public void setOccupation(String occupation) {
+		this.occupation = occupation;
 	}
 
 	public double getHourlyPay() {
@@ -77,7 +87,7 @@ public class Employee {
 	public void displayInfo(){
 		
 		System.out.println("Employee Key: " + getKey() + " || First Name: " + getFirstName() + " || Last Name: " + getLastName()
-		+ "\nWeekly Pay: " + getHourlyPay() + " || Current Balance: " + getBalance());
+		+ "\n Occupation: " + getOccupation() + " || Weekly Pay: " + getHourlyPay() + " || Current Balance: " + getBalance());
 		
 	}
 

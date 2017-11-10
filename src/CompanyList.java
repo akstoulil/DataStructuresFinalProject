@@ -211,5 +211,77 @@ public class CompanyList {
 			
 		}
 	}
+	
+	public void displayEmployees(){
+		
+		for(int i = 0; i < employees.size(); i++){
+			
+			employees.get(i).displayInfo();
+			
+		}
+	}
+	
+	public void numberOfEmployees(){
+		
+		int total = 0;
+		
+		for(int i = 0; i < employees.size(); i++){
+			
+			total++;
+			
+		}
+		
+		System.out.println("Total Number Of Employees In The List: " + total);
+		
+	}
+	
+	public void updateEmployee(){
+		
+		System.out.print("Please enter the employee id of the employee to update: ");
+		int id = in.nextInt();
+		
+		for(int i = 0; i < employees.size(); i++){
+			
+			if(employees.get(i).getKey() == id){
+				
+				System.out.println("Please enter an available number from the list of available options:");
+				System.out.println("Enter 1 to update the employee's first name");
+				System.out.println("Enter 2 to update the employee's last name");
+				System.out.println("Enter 3 to update the employee's occupation");
+				
+				int choice = in.nextInt();
+				
+				if(choice == 1){
+					
+					System.out.println("Please enter the new first name: ");
+					String firstName = in.next();
+					
+					employees.get(i).setFirstName(firstName);
+					System.out.println("First name successfully updated");
+					
+				} else if(choice == 2){
+					
+					System.out.println("Please enter the new last name: ");
+					String lastName = in.next();
+					
+					employees.get(i).setLastName(lastName);
+					System.out.println("Last name successfully updated");
+					
+				} else if(choice == 3){
+					
+					System.out.println("Please enter the new occupation for the employee: ");
+					String occupation = in.next();
+					
+					employees.get(i).setOccupation(occupation);
+					System.out.println("Occupation successfully updated");
+					
+				} else {
+					
+					System.out.println("Error, number entered was not one of the available choices");
+					
+				}
+			}
+		}
+	}
 
 }
