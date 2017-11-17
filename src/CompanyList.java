@@ -217,6 +217,7 @@ public class CompanyList {
 		for(int i = 0; i < employees.size(); i++){
 			
 			employees.get(i).displayInfo();
+			System.out.println("------------------------------");
 			
 		}
 	}
@@ -282,6 +283,34 @@ public class CompanyList {
 				}
 			}
 		}
+	}
+	
+	public void sortByID(){
+		
+		int out, in, min;
+		
+		for(out = 0; out < employees.size(); out++){
+			
+			min = out;
+			
+			for(in = out + 1; in < employees.size(); in++){
+				
+				if(employees.get(in).getKey() < employees.get(min).getKey()){
+					
+					min = in;
+					swap(out, min);
+					
+				}
+			}
+		}
+	}
+	
+	public void swap(int one, int two){
+		
+		Employee temp = employees.get(one);
+		employees.set(one, employees.get(two));
+		employees.set(two, temp);
+		
 	}
 
 }
