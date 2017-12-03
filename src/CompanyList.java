@@ -424,49 +424,35 @@ public class CompanyList {
 	}
 	
 	/**
-	 * This method uses a selection sort to sort the employees in the list in ascending order by their ID numbers
+	 * This method uses an insertion sort to sort the employees in the list in ascending order by their ID numbers
 	 */
 	public void sortByID(){
 		
-		//Variables for the outer loop, inner loop, and minimum value
-		int out, in, min;
+		int in, out;
 		
-		//For loop goes through the array list
-		for(out = 0; out < employees.size(); out++){
+		//For loop goes through the arraylist
+		for(out = 1; out < employees.size(); out++){
 			
-			//Minimum equals the outer loop control variable
-			min = out;
+			//Creating a temporary variable to store the employee at index out
+			Employee temp = employees.get(out);
+			in = out;
 			
-			//Inner for loop goes through the array list
-			for(in = out + 1; in < employees.size(); in++){
+			//Until one key value is smaller
+			while(in > 0 && employees.get(in - 1).getKey() >= temp.getKey()){
 				
-				//If the current employee id is less than the minimum id number
-				if(employees.get(in).getKey() < employees.get(min).getKey()){
-					
-					//Set a new minimum and swap the employees
-					min = in;
-					swap(out, min);
-					
-				}
+				//Shift the item to the right and go left one position
+				employees.set(in, employees.get(in - 1));
+				--in;
+				
 			}
+			
+			//Insert the marked item
+			employees.set(in, temp);
+			
 		}
 		
 		//Program displays that the list was successfully sorted
 		System.out.println("List successfully sorted");
-		
-	}
-	
-	/**
-	 * This method swaps the positions of two employees
-	 * @param one The position of the first employee
-	 * @param two The position of the second employee
-	 */
-	public void swap(int one, int two){
-		
-		//Program swaps the places of the employees
-		Employee temp = employees.get(one);
-		employees.set(one, employees.get(two));
-		employees.set(two, temp);
 		
 	}
 
